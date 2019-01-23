@@ -2,7 +2,7 @@ require 'pry'
 require 'controller'
 
 class View
-  attr_reader :content, :author
+  # attr_reader :content, :author
 
   def create_gossip
     puts "Quel est ton gossip?"
@@ -13,8 +13,8 @@ class View
   end
 
   def index_gossips
-    all_gossips = Gossip.all
-    puts all_gossips
+    gossip = Gossip.all
+    p gossip
   end
 
 end

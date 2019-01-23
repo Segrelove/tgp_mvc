@@ -13,6 +13,7 @@ class Controller
     params = @view.create_gossip
     my_gossip = Gossip.new(params[:content], params[:author])
     my_gossip.save
+    p my_gossip
   end
 
   def index_gossips
