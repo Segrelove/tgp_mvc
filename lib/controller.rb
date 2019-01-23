@@ -5,9 +5,17 @@ require 'view'
 class Controller
   attr_reader :content, :author
 
+  def initialize
+    @view = View.new
+  end
+
   def create_gossip
-    my_gossip = Gossip.new("Jean-Michel Concierge", "Féfé est de Bordeaux")
+    params = @view.create_gossip
+    my_gossip = Gossip.new(params[:content], params[:author])
     my_gossip.save
   end
 
+  def index_gossips
+    params = @view.index_gossips
+  end
 end 
